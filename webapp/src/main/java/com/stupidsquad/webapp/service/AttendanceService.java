@@ -70,9 +70,7 @@ public class AttendanceService {
                                 .toList();
                         List<Long> benchPlayers = new ArrayList<>(signedUpPlayers);
                         benchPlayers.removeAll(rosteredPlayers);
-                        benchPlayers.forEach(playerId -> {
-                            attendanceDTOMap.get(playerId).setBenchCount(attendanceDTOMap.get(playerId).getBenchCount() + 1);
-                        });
+                        benchPlayers.forEach(playerId -> attendanceDTOMap.get(playerId).setBenchCount(attendanceDTOMap.get(playerId).getBenchCount() + 1));
                     }
                 }
             });

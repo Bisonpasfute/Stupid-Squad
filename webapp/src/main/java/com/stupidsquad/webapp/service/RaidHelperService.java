@@ -4,11 +4,9 @@ import com.stupidsquad.webapp.config.StupidSquadConfig;
 import com.stupidsquad.webapp.dto.EventsDTO;
 import com.stupidsquad.webapp.dto.EventsInputDTO;
 import com.stupidsquad.webapp.dto.RaidPlanDTO;
-import jdk.jfr.Event;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 public class RaidHelperService {
