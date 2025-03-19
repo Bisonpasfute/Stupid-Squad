@@ -19,6 +19,12 @@ public class AttendanceDTO extends Player {
     @JsonProperty("benchCount")
     private int benchCount;
 
+    @JsonProperty("absenceCount")
+    private int absenceCount;
+
+    @JsonProperty("presenceCount")
+    private int presenceCount;
+
     @JsonProperty("totalEventCount")
     private int totalEventCount;
 
@@ -26,8 +32,10 @@ public class AttendanceDTO extends Player {
         this.setId(player.getId());
         this.setUsername(player.getUsername());
         this.setArrivalDate(player.getArrivalDate());
-        this.benchCount = 0;
         this.signUpCount = 0;
+        this.benchCount = 0;
+        this.absenceCount = 0;
+        this.presenceCount = 0;
         this.totalEventCount = 0;
     }
 }

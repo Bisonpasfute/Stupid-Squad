@@ -18,8 +18,11 @@ public class AttendanceStatisticsDTO {
     @JsonProperty("benchPercentage")
     private float benchPercentage;
 
-    @JsonProperty("signUpPercentage")
-    private float signUpPercentage;
+    @JsonProperty("absencePercentage")
+    private float absencePercentage;
+
+    @JsonProperty("presencePercentage")
+    private float presencePercentage;
 
     @JsonProperty("ghostingPercentage")
     private float ghostingPercentage;

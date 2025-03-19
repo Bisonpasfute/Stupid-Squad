@@ -1,6 +1,7 @@
 package com.stupidsquad.webapp.service;
 
 import com.stupidsquad.webapp.dto.*;
+import com.stupidsquad.webapp.model.ClassEnum;
 import com.stupidsquad.webapp.model.Player;
 import com.stupidsquad.webapp.repository.PlayerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,10 +47,15 @@ public class AttendanceService {
                 RaidPlanDTO raidPlanDTO = raidHelperService.getRaidPlan(Long.parseLong(postedEventDTO.getId()));
                 if (raidPlanDTO != null) {
                     if (postedEventDTO.getSignUps() != null) {
-                        // For each sign-up, increase their sign-up count
+                        // For each sign-up, increase their sign-up count or their absence count
                         postedEventDTO.getSignUps().forEach(signUpDTO -> {
                             long userId = Long.parseLong(signUpDTO.getUserId());
-                            attendanceDTOMap.get(userId).setSignUpCount(attendanceDTOMap.get(userId).getSignUpCount() + 1);
+                            if (ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName())) {
+                                attendanceDTOMap.get(userId).setAbsenceCount(attendanceDTOMap.get(userId).getAbsenceCount() + 1);
+                            }
+                            else {
+                                attendanceDTOMap.get(userId).setSignUpCount(attendanceDTOMap.get(userId).getSignUpCount() + 1);
+                            }
                         });
                     }
                     // For each player-up, if the player arrived before the date of the event, increase their total event count
@@ -59,7 +65,7 @@ public class AttendanceService {
                         }
                     });
 
-                    // Find players who are signed up but not rostered (bench players) and update their bench count
+                    // Find players who are signed up (not as absence) but not rostered (bench players) and update their bench count
                     if (postedEventDTO.getId() != null && !postedEventDTO.getId().isEmpty()) {
                         List<Long> rosteredPlayers = raidPlanDTO.getRaidDropDTO()
                                 .stream()
@@ -67,6 +73,7 @@ public class AttendanceService {
                                 .toList();
                         List<Long> signedUpPlayers = postedEventDTO.getSignUps()
                                 .stream()
+                                .filter(signUpDTO -> !ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName()))
                                 .map(signUpDTO -> Long.parseLong(signUpDTO.getUserId()))
                                 .toList();
                         List<Long> benchPlayers = new ArrayList<>(signedUpPlayers);
@@ -80,13 +87,15 @@ public class AttendanceService {
         // Calculate the final attendance statistics for each player
         attendanceDTOMap.forEach((aLong, attendanceDTO) -> {
             float benchPercentage = ((float) attendanceDTO.getBenchCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
-            float signUpPercentage = ((float) attendanceDTO.getSignUpCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
-            float ghostingPercentage = (((float) attendanceDTO.getTotalEventCount() - (float) attendanceDTO.getSignUpCount()) / (float) attendanceDTO.getTotalEventCount()) * 100F;
+            float absencePercentage = ((float) attendanceDTO.getAbsenceCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
+            float presencePercentage = ((float) attendanceDTO.getSignUpCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
+            float ghostingPercentage = (((float) attendanceDTO.getTotalEventCount() - ((float) attendanceDTO.getSignUpCount() + attendanceDTO.getAbsenceCount()) / (float) attendanceDTO.getTotalEventCount())) * 100F;
             AttendanceStatisticsDTO player = new AttendanceStatisticsDTO(
                     attendanceDTO.getId(),
                     attendanceDTO.getUsername(),
                     benchPercentage,
-                    signUpPercentage,
+                    absencePercentage,
+                    presencePercentage,
                     ghostingPercentage
 
             );
