@@ -1,12 +1,14 @@
 package com.stupidsquad.webapp.controller;
 
 import com.stupidsquad.webapp.dto.*;
+import com.stupidsquad.webapp.model.LootAssignment;
 import com.stupidsquad.webapp.service.AttendanceService;
+import com.stupidsquad.webapp.service.LootService;
 import com.stupidsquad.webapp.service.RaidHelperService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,6 +21,9 @@ public class StupidSquadController {
     @Autowired
     private AttendanceService attendanceService;
 
+    @Autowired
+    private LootService lootService;
+
     @GetMapping("/attendance")
     public List<AttendanceStatisticsDTO> getAttendance(@RequestHeader(required = false) Integer page,
                                                        @RequestHeader(required = false) Boolean includeSignUps,
@@ -28,5 +33,19 @@ public class StupidSquadController {
         EventsInputDTO eventsInputDTO = new EventsInputDTO(page, includeSignUps, channelFilter, startTimeFilter, endTimeFilter);
         EventsDTO eventsDTO = raidHelperService.getEvents(eventsInputDTO);
         return attendanceService.getAttendance(eventsDTO);
+    }
+
+    @PostMapping("/loot/import")
+    public ResponseEntity<?> importLoot(@RequestBody List<LootAssignment> lootAssignments) {
+        try {
+            List<LootAssignment> allLoot = lootService.importLoot(lootAssignments);
+
+            return ResponseEntity.status(HttpStatus.CREATED)
+                    .body(new LootResponseDTO("success", "Data imported successfully.", allLoot));
+        }
+        catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(new LootResponseDTO("error", "An unexpected error occurred.", e.getMessage()));
+        }
     }
 }

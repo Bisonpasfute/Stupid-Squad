@@ -1,10 +1,10 @@
-CREATE TABLE PLAYER (
-    ID BIGINT PRIMARY KEY,
-    USERNAME VARCHAR(255) NOT NULL,
-    ARRIVAL_DATE DATE NOT NULL
+CREATE TABLE player (
+    id BIGINT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    arrival_date DATE NOT NULL
 );
 
-INSERT INTO PLAYER (ID, USERNAME, ARRIVAL_DATE) VALUES
+INSERT INTO player (id, username, arrival_date) VALUES
 (105690965963968512, 'Sinewyk', '2025-03-01'),
 (118053095946059785, 'Ooj', '2025-03-01'),
 (125944649524183040, 'Ywilz', '2025-03-01'),
@@ -165,3 +165,28 @@ INSERT INTO PLAYER (ID, USERNAME, ARRIVAL_DATE) VALUES
 (1228040638252187741, 'Glzoo', '2025-03-01'),
 (1243210357439467533, 'MДDИΞS_5', '2025-03-01'),
 (1307652004239249418, 'Alphashot', '2025-03-01');
+
+CREATE TABLE loot_assignment (
+    id VARCHAR(255) PRIMARY KEY,
+    player VARCHAR(255),
+    date VARCHAR(255),
+    time VARCHAR(255),
+    item_id INT,
+    item_string VARCHAR(255),
+    response VARCHAR(255),
+    votes INT,
+    class VARCHAR(255),
+    instance VARCHAR(255),
+    boss VARCHAR(255),
+    gear1 VARCHAR(255),
+    gear2 VARCHAR(255),
+    response_id INT,
+    is_award_reason VARCHAR(255),
+    roll_type VARCHAR(255),
+    sub_type VARCHAR(255),
+    equip_loc VARCHAR(255),
+    note VARCHAR(255),
+    owner VARCHAR(255),
+    item_name VARCHAR(255),
+    server_time BIGINT
+);
