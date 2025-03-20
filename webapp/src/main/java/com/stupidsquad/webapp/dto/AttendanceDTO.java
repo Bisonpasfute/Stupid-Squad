@@ -2,15 +2,12 @@ package com.stupidsquad.webapp.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.stupidsquad.webapp.model.Player;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+@EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
 public class AttendanceDTO extends Player {
 
     @JsonProperty("signUpCount")

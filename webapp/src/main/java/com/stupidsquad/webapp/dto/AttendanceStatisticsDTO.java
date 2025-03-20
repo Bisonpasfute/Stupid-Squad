@@ -2,12 +2,10 @@ package com.stupidsquad.webapp.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 @AllArgsConstructor
-@Getter
-@Setter
+@Data
 public class AttendanceStatisticsDTO {
     @JsonProperty("userID")
     private long userId;
