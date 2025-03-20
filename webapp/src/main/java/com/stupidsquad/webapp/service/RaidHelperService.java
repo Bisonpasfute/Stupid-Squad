@@ -1,6 +1,6 @@
 package com.stupidsquad.webapp.service;
 
-import com.stupidsquad.webapp.config.StupidSquadConfig;
+import com.stupidsquad.webapp.config.WebClientConfig;
 import com.stupidsquad.webapp.dto.EventsDTO;
 import com.stupidsquad.webapp.dto.EventsInputDTO;
 import com.stupidsquad.webapp.dto.RaidPlanDTO;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class RaidHelperService {
 
-    private final StupidSquadConfig webClient;
+    private final WebClientConfig webClient;
 
     @Value("${api.raidplan.uri}")
     private String raidPlanUrl;
@@ -26,13 +26,13 @@ public class RaidHelperService {
     private String apiKey;
 
     @Autowired
-    public RaidHelperService(StupidSquadConfig webClient) {
+    public RaidHelperService(WebClientConfig webClient) {
         this.webClient = webClient;
     }
 
     public RaidPlanDTO getRaidPlan(long eventId) {
         String uri = raidPlanUrl.replace("{eventid}", String.valueOf(eventId));
-        return webClient.stupidSquadWebClient()
+        return webClient.webClient()
                 .get()
                 .uri(uri)
                 .retrieve()
@@ -42,7 +42,7 @@ public class RaidHelperService {
 
     public EventsDTO getEvents(EventsInputDTO input) {
         String uri = eventsUrl.replace("{serverid}", serverId);
-        return webClient.stupidSquadWebClient()
+        return webClient.webClient()
                 .get()
                 .uri(uri)
                 .header("Authorization", apiKey)
