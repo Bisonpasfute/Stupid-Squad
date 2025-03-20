@@ -32,7 +32,7 @@ public class RaidHelperService {
 
     public RaidPlanDTO getRaidPlan(long eventId) {
         String uri = raidPlanUrl.replace("{eventid}", String.valueOf(eventId));
-        return webClient.stupidSquandWebClient()
+        return webClient.stupidSquadWebClient()
                 .get()
                 .uri(uri)
                 .retrieve()
@@ -42,7 +42,7 @@ public class RaidHelperService {
 
     public EventsDTO getEvents(EventsInputDTO input) {
         String uri = eventsUrl.replace("{serverid}", serverId);
-        return webClient.stupidSquandWebClient()
+        return webClient.stupidSquadWebClient()
                 .get()
                 .uri(uri)
                 .header("Authorization", apiKey)

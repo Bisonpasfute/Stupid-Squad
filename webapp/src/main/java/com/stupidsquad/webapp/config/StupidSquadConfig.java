@@ -8,7 +8,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class StupidSquadConfig {
 
     @Bean
-    public WebClient stupidSquandWebClient() {
+    public WebClient stupidSquadWebClient() {
         return WebClient.builder()
                 .codecs(configurer -> configurer
                         .defaultCodecs()
