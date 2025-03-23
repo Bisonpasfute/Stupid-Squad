@@ -8,10 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.Date;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class AttendanceService {
@@ -69,9 +66,13 @@ public class AttendanceService {
                     if (postedEventDTO.getId() != null && !postedEventDTO.getId().isEmpty()) {
                         List<Long> rosteredPlayers = raidPlanDTO.getRaidDropDTO()
                                 .stream()
-                                .map(raidDropDTO -> Long.parseLong(raidDropDTO.getUserid()))
+                                .map(RaidDropDTO::getUserid)
+                                .filter(userId -> userId != null && !userId.isEmpty() && !userId.equals("undefined"))  // Check for null or empty
+                                .map(Long::parseLong)
                                 .toList();
-                        List<Long> signedUpPlayers = postedEventDTO.getSignUps()
+
+                        List<Long> signedUpPlayers = Optional.ofNullable(postedEventDTO.getSignUps())
+                                .orElseGet(Collections::emptyList)  // Provide an empty list if null
                                 .stream()
                                 .filter(signUpDTO -> !ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName()))
                                 .map(signUpDTO -> Long.parseLong(signUpDTO.getUserId()))
