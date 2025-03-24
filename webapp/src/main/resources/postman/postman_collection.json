@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "4f439e30-c60a-4879-a8aa-3d4ca45a0874",
+		"name": "Stupid Squad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42846980"
+	},
+	"item": [
+		{
+			"name": "/events",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://raid-helper.dev/api/v2/events/1348645363497828414",
+					"protocol": "https",
+					"host": [
+						"raid-helper",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v2",
+						"events",
+						"1348645363497828414"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/servers",
+			"request": {
+				"auth": {
+					"type": "apikey",
+					"apikey": [
+						{
+							"key": "value",
+							"value": "tgrUQdfcYv6UfjFnnO4mZzGN8cVvQi5YzNH0GRlq",
+							"type": "string"
+						},
+						{
+							"key": "key",
+							"value": "Authorization",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Page",
+						"value": "0",
+						"type": "text"
+					},
+					{
+						"key": "ChannelFilter",
+						"value": "1316074810559959090",
+						"type": "text"
+					},
+					{
+						"key": "IncludeSignUps",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "StartTimeFilter",
+						"value": "1741525061",
+						"type": "text"
+					},
+					{
+						"key": "EndTimeFilter",
+						"value": "1742389062",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://raid-helper.dev/api/v3/servers/1183372485488562246/events",
+					"protocol": "https",
+					"host": [
+						"raid-helper",
+						"dev"
+					],
+					"path": [
+						"api",
+						"v3",
+						"servers",
+						"1183372485488562246",
+						"events"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/raidplan",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://raid-helper.dev/api/raidplan/1348645363497828414",
+					"protocol": "https",
+					"host": [
+						"raid-helper",
+						"dev"
+					],
+					"path": [
+						"api",
+						"raidplan",
+						"1348645363497828414"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/attendance",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Page",
+						"value": "0",
+						"type": "text"
+					},
+					{
+						"key": "ChannelFilter",
+						"value": "1316074810559959090",
+						"type": "text"
+					},
+					{
+						"key": "IncludeSignUps",
+						"value": "true",
+						"type": "text"
+					},
+					{
+						"key": "StartTimeFilter",
+						"value": "1741525061",
+						"description": "Dimanche 9 mars 2025 13:57:41 GMT+01:00",
+						"type": "text"
+					},
+					{
+						"key": "EndTimeFilter",
+						"value": "1742821224",
+						"description": "Lundi 24 mars 2025 14:00:24 GMT+01:00",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/attendance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"attendance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/loot/import",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"player\": \"Tediø-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:06:55\",\r\n        \"id\": \"1740600415-22\",\r\n        \"itemID\": 78493,\r\n        \"itemString\": \"item:78493::::::::85\",\r\n        \"response\": \"upgrade\",\r\n        \"votes\": 0,\r\n        \"class\": \"DEATHKNIGHT\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Chevalière des vengeurs en obsidienne]\",\r\n        \"gear2\": \"[Bague d’Alysrazor]\",\r\n        \"responseID\": \"2\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Miscellaneous\",\r\n        \"equipLoc\": \"Finger\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Anneau du cœur dur\",\r\n        \"servertime\": \"1740600415\"\r\n    },\r\n    {\r\n        \"player\": \"Tediø-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:08:33\",\r\n        \"id\": \"1740600513-28\",\r\n        \"itemID\": 78403,\r\n        \"itemString\": \"item:78403::::::::85\",\r\n        \"response\": \"upgrade\",\r\n        \"votes\": 0,\r\n        \"class\": \"DEATHKNIGHT\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Gurthalak, la Voix des profondeurs]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"2\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Two-Handed Axes\",\r\n        \"equipLoc\": \"Two-Hand\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Tranche-spécimen expérimental\",\r\n        \"servertime\": \"1740600513\"\r\n    },\r\n    {\r\n        \"player\": \"Tediø-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:09:19\",\r\n        \"id\": \"1740600559-33\",\r\n        \"itemID\": 78452,\r\n        \"itemString\": \"item:78452::::::::85\",\r\n        \"response\": \"upgrade\",\r\n        \"votes\": 0,\r\n        \"class\": \"DEATHKNIGHT\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Ceinture infroissable de la fureur]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"2\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Plate\",\r\n        \"equipLoc\": \"Waist\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Collier de Goriona\",\r\n        \"servertime\": \"1740600559\"\r\n    },\r\n    {\r\n        \"player\": \"Khoni-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:03:30\",\r\n        \"id\": \"1740600210-7\",\r\n        \"itemID\": 78361,\r\n        \"itemString\": \"item:78361::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"PALADIN\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Solerets argentés de fureur]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Plate\",\r\n        \"equipLoc\": \"Feet\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Grèves de pied pilier\",\r\n        \"servertime\": \"1740600210\"\r\n    },\r\n    {\r\n        \"player\": \"Itsfaya-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:07:43\",\r\n        \"id\": \"1740600463-25\",\r\n        \"itemID\": 78387,\r\n        \"itemString\": \"item:78387::::::::85\",\r\n        \"response\": \"upgrade\",\r\n        \"votes\": 0,\r\n        \"class\": \"HUNTER\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Arathar, l’œil de la Flamme]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"2\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Crossbows\",\r\n        \"equipLoc\": \"Ranged\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Arbalestre horrifiante en corne\",\r\n        \"servertime\": \"1740600463\"\r\n    },\r\n    {\r\n        \"player\": \"Htagz-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:55:38\",\r\n        \"id\": \"1740603338-39\",\r\n        \"itemID\": 78462,\r\n        \"itemString\": \"item:78462::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DRUID\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Échine d’Aile de mort\",\r\n        \"gear1\": \"[Bande-orteils du toit]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Leather\",\r\n        \"equipLoc\": \"Feet\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Souliers du magma de sang\",\r\n        \"servertime\": \"1740603338\"\r\n    },\r\n    {\r\n        \"player\": \"Naymx-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:06:04\",\r\n        \"id\": \"1740600364-18\",\r\n        \"itemID\": 78392,\r\n        \"itemString\": \"item:78392::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"WARLOCK\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Aiguillon du scorpion enflammé]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Wands\",\r\n        \"equipLoc\": \"Ranged\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Doigt de Zon'ozz\",\r\n        \"servertime\": \"1740600364\"\r\n    },\r\n    {\r\n        \"player\": \"Enbi-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:05:04\",\r\n        \"id\": \"1740600304-14\",\r\n        \"itemID\": 78373,\r\n        \"itemString\": \"item:78373::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DEATHKNIGHT\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Plates de poignet écrase-cœur]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Plate\",\r\n        \"equipLoc\": \"Wrist\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Brassards rochecuir\",\r\n        \"servertime\": \"1740600304\"\r\n    },\r\n    {\r\n        \"player\": \"Enbi-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:55:18\",\r\n        \"id\": \"1740603318-36\",\r\n        \"itemID\": 77997,\r\n        \"itemString\": \"item:77997::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DEATHKNIGHT\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Échine d’Aile de mort\",\r\n        \"gear1\": \"[Oeil d’anéantissement]\",\r\n        \"gear2\": \"[Appareil de Khaz'goroth]\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Miscellaneous\",\r\n        \"equipLoc\": \"Trinket\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Oeil d’anéantissement\",\r\n        \"servertime\": \"1740603318\"\r\n    },\r\n    {\r\n        \"player\": \"Alphashot-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:02:55\",\r\n        \"id\": \"1740600175-6\",\r\n        \"itemID\": 78848,\r\n        \"itemString\": \"item:78848::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"HUNTER\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Corselet au cœur enflammé]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Plastron du protecteur corrompu\",\r\n        \"servertime\": \"1740600175\"\r\n    },\r\n    {\r\n        \"player\": \"Alphashot-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:04:23\",\r\n        \"id\": \"1740600263-12\",\r\n        \"itemID\": 78413,\r\n        \"itemString\": \"item:78413::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"HUNTER\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Chevalière des vengeurs viridienne]\",\r\n        \"gear2\": \"[Jonc de descente d’urgence]\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Miscellaneous\",\r\n        \"equipLoc\": \"Finger\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Chevalière des bouches avides\",\r\n        \"servertime\": \"1740600263\"\r\n    },\r\n    {\r\n        \"player\": \"Alphashot-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:07:35\",\r\n        \"id\": \"1740600455-24\",\r\n        \"itemID\": 78415,\r\n        \"itemString\": \"item:78415::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"HUNTER\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Bottes éclat-d’os]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Mail\",\r\n        \"equipLoc\": \"Feet\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Bottines des rêves dormants\",\r\n        \"servertime\": \"1740600455\"\r\n    },\r\n    {\r\n        \"player\": \"Alphashot-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:56:07\",\r\n        \"id\": \"1740603367-41\",\r\n        \"itemID\": 77994,\r\n        \"itemString\": \"item:77994::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"HUNTER\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Échine d’Aile de mort\",\r\n        \"gear1\": \"[Fiole d’ombres]\",\r\n        \"gear2\": \"[Fureur du déchaînement]\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Miscellaneous\",\r\n        \"equipLoc\": \"Trinket\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Fureur du déchaînement\",\r\n        \"servertime\": \"1740603367\"\r\n    },\r\n    {\r\n        \"player\": \"Ymìir-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:02:36\",\r\n        \"id\": \"1740600156-3\",\r\n        \"itemID\": 78859,\r\n        \"itemString\": \"item:78859::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"WARLOCK\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Mantelet du voile sans visage]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"need 4p pour pas me suicider avec le prepull gear pls\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Epaulières du conquérant corrupteur\",\r\n        \"servertime\": \"1740600156\"\r\n    },\r\n    {\r\n        \"player\": \"Maxotti-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:03:44\",\r\n        \"id\": \"1740600224-8\",\r\n        \"itemID\": 78446,\r\n        \"itemString\": \"item:78446::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"ROGUE\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Bracières de l’aile d’ombre]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Leather\",\r\n        \"equipLoc\": \"Wrist\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Bracières de l’aile d’ombre\",\r\n        \"servertime\": \"1740600224\"\r\n    },\r\n    {\r\n        \"player\": \"Maxotti-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:07:48\",\r\n        \"id\": \"1740600468-26\",\r\n        \"itemID\": 78369,\r\n        \"itemString\": \"item:78369::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"ROGUE\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Arathar, l’œil de la Flamme]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Thrown\",\r\n        \"equipLoc\": \"Thrown\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Morceau de saronite tranchant\",\r\n        \"servertime\": \"1740600468\"\r\n    },\r\n    {\r\n        \"player\": \"Maxotti-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:08:35\",\r\n        \"id\": \"1740600515-29\",\r\n        \"itemID\": 78429,\r\n        \"itemString\": \"item:78429::::::::85\",\r\n        \"response\": \"upgrade\",\r\n        \"votes\": 0,\r\n        \"class\": \"ROGUE\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[No’Kaled, les éléments de la mort]\",\r\n        \"gear2\": \"[Rasoir d’Alysra]\",\r\n        \"responseID\": \"2\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"One-Handed Maces\",\r\n        \"equipLoc\": \"One-Hand\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Etoile du matin de la volonté héroïque\",\r\n        \"servertime\": \"1740600515\"\r\n    },\r\n    {\r\n        \"player\": \"Maxotti-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:08:40\",\r\n        \"id\": \"1740600520-30\",\r\n        \"itemID\": 78429,\r\n        \"itemString\": \"item:78429::::::::85\",\r\n        \"response\": \"upgrade\",\r\n        \"votes\": 0,\r\n        \"class\": \"ROGUE\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[No’Kaled, les éléments de la mort]\",\r\n        \"gear2\": \"[Rasoir d’Alysra]\",\r\n        \"responseID\": \"2\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"One-Handed Maces\",\r\n        \"equipLoc\": \"One-Hand\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Etoile du matin de la volonté héroïque\",\r\n        \"servertime\": \"1740600520\"\r\n    },\r\n    {\r\n        \"player\": \"Zakdp-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:05:15\",\r\n        \"id\": \"1740600315-15\",\r\n        \"itemID\": 78853,\r\n        \"itemString\": \"item:78853::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"PRIEST\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Protège-mains de la flamme purificatrice]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Gantelets du conquérant corrompu\",\r\n        \"servertime\": \"1740600315\"\r\n    },\r\n    {\r\n        \"player\": \"Zakdp-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:08:42\",\r\n        \"id\": \"1740600522-31\",\r\n        \"itemID\": 78404,\r\n        \"itemString\": \"item:78404::::::::85\",\r\n        \"response\": \"upgrade\",\r\n        \"votes\": 0,\r\n        \"class\": \"PRIEST\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Gueule du seigneur dragon]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"2\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Daggers\",\r\n        \"equipLoc\": \"Main Hand\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Scalpel de l’agonie implacable\",\r\n        \"servertime\": \"1740600522\"\r\n    },\r\n    {\r\n        \"player\": \"Joshchassoux-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:07:24\",\r\n        \"id\": \"1740600444-23\",\r\n        \"itemID\": 78857,\r\n        \"itemString\": \"item:78857::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"HUNTER\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Garde-jambes de traqueur de wyrm]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Jambières du protecteur corrompu\",\r\n        \"servertime\": \"1740600444\"\r\n    },\r\n    {\r\n        \"player\": \"Shîføu-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:55:21\",\r\n        \"id\": \"1740603321-37\",\r\n        \"itemID\": 78465,\r\n        \"itemString\": \"item:78465::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"WARRIOR\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Échine d’Aile de mort\",\r\n        \"gear1\": \"[Garde-épaules du dragon colossal en plaques]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Plate\",\r\n        \"equipLoc\": \"Shoulder\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Espauliers brise-dos\",\r\n        \"servertime\": \"1740603321\"\r\n    },\r\n    {\r\n        \"player\": \"Víktor-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:02:47\",\r\n        \"id\": \"1740600167-5\",\r\n        \"itemID\": 78435,\r\n        \"itemString\": \"item:78435::::::::85\",\r\n        \"response\": \"upgrade os\",\r\n        \"votes\": 0,\r\n        \"class\": \"SHAMAN\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Mantelet de l’éruption volcanique]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"4\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Mail\",\r\n        \"equipLoc\": \"Shoulder\",\r\n        \"note\": \"in case\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Spécimens imparfaits 27 et 29\",\r\n        \"servertime\": \"1740600167\"\r\n    },\r\n    {\r\n        \"player\": \"Víktor-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:09:26\",\r\n        \"id\": \"1740600566-34\",\r\n        \"itemID\": 78370,\r\n        \"itemString\": \"item:78370::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"SHAMAN\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Ceinture des grâces fantomatiques]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Mail\",\r\n        \"equipLoc\": \"Waist\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Ceinturon de la pierre fracassée\",\r\n        \"servertime\": \"1740600566\"\r\n    },\r\n    {\r\n        \"player\": \"Bisonpasfuté-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:03:47\",\r\n        \"id\": \"1740600227-9\",\r\n        \"itemID\": 78446,\r\n        \"itemString\": \"item:78446::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DRUID\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Brassards aux poches multiples]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Leather\",\r\n        \"equipLoc\": \"Wrist\",\r\n        \"note\": \"+372 DPS\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Bracières de l’aile d’ombre\",\r\n        \"servertime\": \"1740600227\"\r\n    },\r\n    {\r\n        \"player\": \"Bisonpasfuté-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:03:56\",\r\n        \"id\": \"1740600236-10\",\r\n        \"itemID\": 78402,\r\n        \"itemString\": \"item:78402::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DRUID\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Bande-orteils du toit]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Leather\",\r\n        \"equipLoc\": \"Feet\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Souliers ensanglantés d’interrogateur\",\r\n        \"servertime\": \"1740600236\"\r\n    },\r\n    {\r\n        \"player\": \"Bisonpasfuté-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:04:09\",\r\n        \"id\": \"1740600249-11\",\r\n        \"itemID\": 78388,\r\n        \"itemString\": \"item:78388::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DRUID\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Ceinture de peau écorchée]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Leather\",\r\n        \"equipLoc\": \"Waist\",\r\n        \"note\": \"+650 DPS\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Ceinture de peau écorchée\",\r\n        \"servertime\": \"1740600249\"\r\n    },\r\n    {\r\n        \"player\": \"Bisonpasfuté-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:55:53\",\r\n        \"id\": \"1740603353-40\",\r\n        \"itemID\": 77994,\r\n        \"itemString\": \"item:77994::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DRUID\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Échine d’Aile de mort\",\r\n        \"gear1\": \"[Cachet kiroptyrique]\",\r\n        \"gear2\": \"[Fureur du déchaînement]\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Miscellaneous\",\r\n        \"equipLoc\": \"Trinket\",\r\n        \"note\": \"+1068 DPS\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Fureur du déchaînement\",\r\n        \"servertime\": \"1740603353\"\r\n    },\r\n    {\r\n        \"player\": \"Yiz-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:02:10\",\r\n        \"id\": \"1740600130-2\",\r\n        \"itemID\": 78364,\r\n        \"itemString\": \"item:78364::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"PRIEST\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Cœur fongique pétrifié]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Miscellaneous\",\r\n        \"equipLoc\": \"Neck\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Cœur fongique pétrifié\",\r\n        \"servertime\": \"1740600130\"\r\n    },\r\n    {\r\n        \"player\": \"Yiz-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:05:48\",\r\n        \"id\": \"1740600348-17\",\r\n        \"itemID\": 78856,\r\n        \"itemString\": \"item:78856::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"PRIEST\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Jambières de la lumière mourante]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Jambières du conquérant corrompu\",\r\n        \"servertime\": \"1740600348\"\r\n    },\r\n    {\r\n        \"player\": \"Badflat-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:01:23\",\r\n        \"id\": \"1740600083-0\",\r\n        \"itemID\": 78851,\r\n        \"itemString\": \"item:78851::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"WARRIOR\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Grand heaume de la gueule vorace]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Couronne du protecteur corrompu\",\r\n        \"servertime\": \"1740600083\"\r\n    },\r\n    {\r\n        \"player\": \"Badflat-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:05:30\",\r\n        \"id\": \"1740600330-16\",\r\n        \"itemID\": 78854,\r\n        \"itemString\": \"item:78854::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"WARRIOR\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Gantelets du géant de lave]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Gantelets du protecteur corrompu\",\r\n        \"servertime\": \"1740600330\"\r\n    },\r\n    {\r\n        \"player\": \"Spozshift-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:02:44\",\r\n        \"id\": \"1740600164-4\",\r\n        \"itemID\": 78861,\r\n        \"itemString\": \"item:78861::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DRUID\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Protège-épaules aux flammes vacillantes de la poussée de fièvre]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Epaulières du vainqueur corrupteur\",\r\n        \"servertime\": \"1740600164\"\r\n    },\r\n    {\r\n        \"player\": \"Spozshift-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:09:13\",\r\n        \"id\": \"1740600553-32\",\r\n        \"itemID\": 78849,\r\n        \"itemString\": \"item:78849::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DRUID\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Habit tisse-feuillage en obsidienne]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Plastron du vainqueur corrompu\",\r\n        \"servertime\": \"1740600553\"\r\n    },\r\n    {\r\n        \"player\": \"Scroow-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:01:40\",\r\n        \"id\": \"1740600100-1\",\r\n        \"itemID\": 78852,\r\n        \"itemString\": \"item:78852::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DEATHKNIGHT\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Casque de plates mortelles en élémentium]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Armor Token\",\r\n        \"equipLoc\": \"\",\r\n        \"note\": \"4p angle\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Couronne du vainqueur corrompu\",\r\n        \"servertime\": \"1740600100\"\r\n    },\r\n    {\r\n        \"player\": \"Scroow-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:05:01\",\r\n        \"id\": \"1740600301-13\",\r\n        \"itemID\": 78373,\r\n        \"itemString\": \"item:78373::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DEATHKNIGHT\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Brassards de la fissure terrestre]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Plate\",\r\n        \"equipLoc\": \"Wrist\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Brassards rochecuir\",\r\n        \"servertime\": \"1740600301\"\r\n    },\r\n    {\r\n        \"player\": \"Scroow-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:55:23\",\r\n        \"id\": \"1740603323-38\",\r\n        \"itemID\": 78465,\r\n        \"itemString\": \"item:78465::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"DEATHKNIGHT\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Échine d’Aile de mort\",\r\n        \"gear1\": \"[Espauliers de plates mortelles en élémentium]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Plate\",\r\n        \"equipLoc\": \"Shoulder\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Espauliers brise-dos\",\r\n        \"servertime\": \"1740603323\"\r\n    },\r\n    {\r\n        \"player\": \"Bondedp-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:06:49\",\r\n        \"id\": \"1740600409-21\",\r\n        \"itemID\": 78434,\r\n        \"itemString\": \"item:78434::::::::85\",\r\n        \"response\": \"Désenchantement\",\r\n        \"votes\": 0,\r\n        \"class\": \"PRIEST\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Sandales brise-pieds]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"true\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Leather\",\r\n        \"equipLoc\": \"Feet\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Bottines des hurlements abjects\",\r\n        \"servertime\": \"1740600409\"\r\n    },\r\n    {\r\n        \"player\": \"Bondedp-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:07:55\",\r\n        \"id\": \"1740600475-27\",\r\n        \"itemID\": 78418,\r\n        \"itemString\": \"item:78418::::::::85\",\r\n        \"response\": \"Désenchantement\",\r\n        \"votes\": 0,\r\n        \"class\": \"PRIEST\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Courroux du dragon, le Repos de Tarecgosa]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"true\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Staves\",\r\n        \"equipLoc\": \"Two-Hand\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Bâtonnet d’éclair\",\r\n        \"servertime\": \"1740600475\"\r\n    },\r\n    {\r\n        \"player\": \"Bondedp-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:09:29\",\r\n        \"id\": \"1740600569-35\",\r\n        \"itemID\": 78451,\r\n        \"itemString\": \"item:78451::::::::85\",\r\n        \"response\": \"Désenchantement\",\r\n        \"votes\": 0,\r\n        \"class\": \"PRIEST\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Courroux du dragon, le Repos de Tarecgosa]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"true\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Staves\",\r\n        \"equipLoc\": \"Two-Hand\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Visage du Destructeur\",\r\n        \"servertime\": \"1740600569\"\r\n    },\r\n    {\r\n        \"player\": \"Alfredz-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:06:07\",\r\n        \"id\": \"1740600367-19\",\r\n        \"itemID\": 78392,\r\n        \"itemString\": \"item:78392::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"MAGE\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Traînée de braises]\",\r\n        \"gear2\": \"\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Wands\",\r\n        \"equipLoc\": \"Ranged\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Doigt de Zon'ozz\",\r\n        \"servertime\": \"1740600367\"\r\n    },\r\n    {\r\n        \"player\": \"Inessà-Auberdine\",\r\n        \"date\": \"2025/02/26\",\r\n        \"time\": \"22:06:22\",\r\n        \"id\": \"1740600382-20\",\r\n        \"itemID\": 77991,\r\n        \"itemString\": \"item:77991::::::::85\",\r\n        \"response\": \"bis\",\r\n        \"votes\": 0,\r\n        \"class\": \"MAGE\",\r\n        \"instance\": \"Âme des dragons-25 joueurs (héroïque)\",\r\n        \"boss\": \"Maître de guerre Corne-Noire\",\r\n        \"gear1\": \"[Insigne de l’esprit corrompu]\",\r\n        \"gear2\": \"[Volonté de déliement]\",\r\n        \"responseID\": \"1\",\r\n        \"isAwardReason\": \"false\",\r\n        \"rollType\": \"normal\",\r\n        \"subType\": \"Miscellaneous\",\r\n        \"equipLoc\": \"Trinket\",\r\n        \"note\": \"\",\r\n        \"owner\": \"Inessà-Auberdine\",\r\n        \"itemName\": \"Insigne de l’esprit corrompu\",\r\n        \"servertime\": \"1740600382\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/loot/import",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loot",
+						"import"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/loot/search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"player\": \"Ted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/loot/search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loot",
+						"search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
