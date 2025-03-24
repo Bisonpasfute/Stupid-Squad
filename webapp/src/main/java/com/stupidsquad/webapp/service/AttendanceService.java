@@ -47,11 +47,12 @@ public class AttendanceService {
                         // For each sign-up, increase their sign-up count or their absence count
                         postedEventDTO.getSignUps().forEach(signUpDTO -> {
                             long userId = Long.parseLong(signUpDTO.getUserId());
-                            if (ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName())) {
-                                attendanceDTOMap.get(userId).setAbsenceCount(attendanceDTOMap.get(userId).getAbsenceCount() + 1);
-                            }
-                            else {
-                                attendanceDTOMap.get(userId).setSignUpCount(attendanceDTOMap.get(userId).getSignUpCount() + 1);
+                            if (postedEventDTO.getStartTime() * 1000L >= attendanceDTOMap.get(userId).getArrivalDate().getTime()) {
+                                if (ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName())) {
+                                    attendanceDTOMap.get(userId).setAbsenceCount(attendanceDTOMap.get(userId).getAbsenceCount() + 1);
+                                } else {
+                                    attendanceDTOMap.get(userId).setSignUpCount(attendanceDTOMap.get(userId).getSignUpCount() + 1);
+                                }
                             }
                         });
                     }
@@ -79,7 +80,11 @@ public class AttendanceService {
                                 .toList();
                         List<Long> benchPlayers = new ArrayList<>(signedUpPlayers);
                         benchPlayers.removeAll(rosteredPlayers);
-                        benchPlayers.forEach(playerId -> attendanceDTOMap.get(playerId).setBenchCount(attendanceDTOMap.get(playerId).getBenchCount() + 1));
+                        benchPlayers.forEach(playerId -> {
+                            if (postedEventDTO.getStartTime() * 1000L >= attendanceDTOMap.get(playerId).getArrivalDate().getTime()) {
+                             attendanceDTOMap.get(playerId).setBenchCount(attendanceDTOMap.get(playerId).getBenchCount() + 1);
+                            }
+                        });
                     }
                 }
             });
@@ -90,15 +95,15 @@ public class AttendanceService {
             float benchPercentage = ((float) attendanceDTO.getBenchCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
             float absencePercentage = ((float) attendanceDTO.getAbsenceCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
             float presencePercentage = ((float) attendanceDTO.getSignUpCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
-            float ghostingPercentage = (((float) attendanceDTO.getTotalEventCount() - ((float) attendanceDTO.getSignUpCount() + attendanceDTO.getAbsenceCount()) / (float) attendanceDTO.getTotalEventCount())) * 100F;
+            float ghostingPercentage = ((((float) attendanceDTO.getTotalEventCount() - ((float) attendanceDTO.getSignUpCount() + attendanceDTO.getAbsenceCount())) / (float) attendanceDTO.getTotalEventCount())) * 100F;
             AttendanceStatisticsDTO player = new AttendanceStatisticsDTO(
                     attendanceDTO.getId(),
                     attendanceDTO.getUsername(),
                     benchPercentage,
                     absencePercentage,
                     presencePercentage,
-                    ghostingPercentage
-
+                    ghostingPercentage,
+                    attendanceDTO.getTotalEventCount()
             );
             statisticsDTOList.add(player);
         });

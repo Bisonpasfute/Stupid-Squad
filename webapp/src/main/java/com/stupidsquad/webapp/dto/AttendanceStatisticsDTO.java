@@ -24,4 +24,7 @@ public class AttendanceStatisticsDTO {
 
     @JsonProperty("ghostingPercentage")
     private float ghostingPercentage;
+
+    @JsonProperty("eventCount")
+    private int evenCount;
 }
