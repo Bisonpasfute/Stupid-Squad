@@ -48,7 +48,7 @@ public class AttendanceService {
                         postedEventDTO.getSignUps().forEach(signUpDTO -> {
                             long userId = Long.parseLong(signUpDTO.getUserId());
                             if (postedEventDTO.getStartTime() * 1000L >= attendanceDTOMap.get(userId).getArrivalDate().getTime()) {
-                                if (ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName())) {
+                                if (ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName()) || ClassEnum.TENTATIVE.getClassName().equals(signUpDTO.getSpecName())) {
                                     attendanceDTOMap.get(userId).setAbsenceCount(attendanceDTOMap.get(userId).getAbsenceCount() + 1);
                                 } else {
                                     attendanceDTOMap.get(userId).setSignUpCount(attendanceDTOMap.get(userId).getSignUpCount() + 1);
@@ -75,7 +75,7 @@ public class AttendanceService {
                         List<Long> signedUpPlayers = Optional.ofNullable(postedEventDTO.getSignUps())
                                 .orElseGet(Collections::emptyList)  // Provide an empty list if null
                                 .stream()
-                                .filter(signUpDTO -> !ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName()))
+                                .filter(signUpDTO -> !(ClassEnum.ABSENCE.getClassName().equals(signUpDTO.getSpecName()) || ClassEnum.TENTATIVE.getClassName().equals(signUpDTO.getSpecName())))
                                 .map(signUpDTO -> Long.parseLong(signUpDTO.getUserId()))
                                 .toList();
                         List<Long> benchPlayers = new ArrayList<>(signedUpPlayers);
