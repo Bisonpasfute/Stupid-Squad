@@ -124,7 +124,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/attendance?page=0&channelFilter=1316074810559959090&includeSignUps=true&startTimeFilter=1741525061&endTimeFilter=1742821224",
+					"raw": "http://localhost:8080/attendance?page=0&channelFilter=1316074810559959090&includeSignUps=true&startTimeFilter=2025-03-20&endTimeFilter=2025-03-31",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -148,13 +148,11 @@
 						},
 						{
 							"key": "startTimeFilter",
-							"value": "1741525061",
-							"description": "Dimanche 9 mars 2025 13:57:41 GMT+01:00"
+							"value": "2025-03-20"
 						},
 						{
 							"key": "endTimeFilter",
-							"value": "1742821224",
-							"description": "Lundi 24 mars 2025 14:00:24 GMT+01:00"
+							"value": "2025-03-31"
 						}
 					]
 				}
