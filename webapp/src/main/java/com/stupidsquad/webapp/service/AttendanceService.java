@@ -29,7 +29,7 @@ public class AttendanceService {
                     postedEventDTO.getSignUps().forEach(signUpDTO -> {
                         long userId = Long.parseLong(signUpDTO.getUserId());
                         if (playerRepository.findById(userId).isEmpty()) {
-                            playerRepository.save(new Player(userId, signUpDTO.getName(), new Date(System.currentTimeMillis())));
+                            playerRepository.save(new Player(userId, signUpDTO.getName(), new Date(postedEventDTO.getStartTime())));
                         }
                     });
                 }
