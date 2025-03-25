@@ -92,10 +92,11 @@ public class AttendanceService {
 
         // Calculate the final attendance statistics for each player
         attendanceDTOMap.forEach((aLong, attendanceDTO) -> {
-            float benchPercentage = ((float) attendanceDTO.getBenchCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
-            float absencePercentage = ((float) attendanceDTO.getAbsenceCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
-            float presencePercentage = ((float) attendanceDTO.getSignUpCount() / (float) attendanceDTO.getTotalEventCount()) * 100F;
-            float ghostingPercentage = ((((float) attendanceDTO.getTotalEventCount() - ((float) attendanceDTO.getSignUpCount() + attendanceDTO.getAbsenceCount())) / (float) attendanceDTO.getTotalEventCount())) * 100F;
+            float totalEventCount = attendanceDTO.getTotalEventCount();
+            float benchPercentage = totalEventCount != 0 ? ((float) attendanceDTO.getBenchCount() / totalEventCount) * 100F : 0F;
+            float absencePercentage = totalEventCount != 0 ? ((float) attendanceDTO.getAbsenceCount() / totalEventCount) * 100F : 0F;
+            float presencePercentage = totalEventCount != 0 ? ((float) attendanceDTO.getSignUpCount() / totalEventCount) * 100F : 0F;
+            float ghostingPercentage = totalEventCount != 0 ? (((totalEventCount - ((float) attendanceDTO.getSignUpCount() + attendanceDTO.getAbsenceCount())) / totalEventCount)) * 100F : 0F;
             AttendanceStatisticsDTO player = new AttendanceStatisticsDTO(
                     attendanceDTO.getId(),
                     attendanceDTO.getUsername(),
