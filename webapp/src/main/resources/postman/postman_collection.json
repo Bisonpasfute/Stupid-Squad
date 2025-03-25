@@ -115,39 +115,16 @@
 		},
 		{
 			"name": "/attendance",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept-encoding": true
+				}
+			},
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "Page",
-						"value": "0",
-						"type": "text"
-					},
-					{
-						"key": "ChannelFilter",
-						"value": "1316074810559959090",
-						"type": "text"
-					},
-					{
-						"key": "IncludeSignUps",
-						"value": "true",
-						"type": "text"
-					},
-					{
-						"key": "StartTimeFilter",
-						"value": "1741525061",
-						"description": "Dimanche 9 mars 2025 13:57:41 GMT+01:00",
-						"type": "text"
-					},
-					{
-						"key": "EndTimeFilter",
-						"value": "1742821224",
-						"description": "Lundi 24 mars 2025 14:00:24 GMT+01:00",
-						"type": "text"
-					}
-				],
+				"header": [],
 				"url": {
-					"raw": "http://localhost:8080/attendance",
+					"raw": "http://localhost:8080/attendance?page=0&channelFilter=1316074810559959090&includeSignUps=true&startTimeFilter=1741525061&endTimeFilter=1742821224",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -155,6 +132,30 @@
 					"port": "8080",
 					"path": [
 						"attendance"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "channelFilter",
+							"value": "1316074810559959090"
+						},
+						{
+							"key": "includeSignUps",
+							"value": "true"
+						},
+						{
+							"key": "startTimeFilter",
+							"value": "1741525061",
+							"description": "Dimanche 9 mars 2025 13:57:41 GMT+01:00"
+						},
+						{
+							"key": "endTimeFilter",
+							"value": "1742821224",
+							"description": "Lundi 24 mars 2025 14:00:24 GMT+01:00"
+						}
 					]
 				}
 			},

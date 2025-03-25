@@ -18,11 +18,11 @@ public class AttendanceController {
     private AttendanceService attendanceService;
 
     @GetMapping("/attendance")
-    public List<AttendanceStatisticsDTO> getAttendance(@RequestHeader(required = false) Integer page,
-                                                       @RequestHeader(required = false) Boolean includeSignUps,
-                                                       @RequestHeader(required = false) String channelFilter,
-                                                       @RequestHeader(required = false) Long startTimeFilter,
-                                                       @RequestHeader(required = false) Long endTimeFilter) {
+    public List<AttendanceStatisticsDTO> getAttendance(@RequestParam(required = false) Integer page,
+                                                       @RequestParam(required = false) Boolean includeSignUps,
+                                                       @RequestParam(required = false) String channelFilter,
+                                                       @RequestParam(required = false) Long startTimeFilter,
+                                                       @RequestParam(required = false) Long endTimeFilter) {
         EventsInputDTO eventsInputDTO = new EventsInputDTO(page, includeSignUps, channelFilter, startTimeFilter, endTimeFilter);
         EventsDTO eventsDTO = raidHelperService.getEvents(eventsInputDTO);
         return attendanceService.getAttendance(eventsDTO);
