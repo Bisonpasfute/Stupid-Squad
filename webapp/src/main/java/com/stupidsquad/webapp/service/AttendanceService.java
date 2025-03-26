@@ -22,6 +22,8 @@ public class AttendanceService {
         Map<Long, AttendanceDTO> attendanceDTOMap = new HashMap<>();
         List<AttendanceStatisticsDTO> statisticsDTOList = new ArrayList<>();
 
+        // Sort events by time, so the arrival date for a new player is the first time they sign up
+        eventsDTO.setPostedEvents(eventsDTO.getPostedEvents().stream().sorted(Comparator.comparing(PostedEventDTO::getStartTime)).toList());
         // Addition of missing players (players who signed up but don't exist in the player table)
         if (eventsDTO.getPostedEvents() != null) {
             eventsDTO.getPostedEvents().forEach(postedEventDTO -> {
@@ -29,7 +31,7 @@ public class AttendanceService {
                     postedEventDTO.getSignUps().forEach(signUpDTO -> {
                         long userId = Long.parseLong(signUpDTO.getUserId());
                         if (playerRepository.findById(userId).isEmpty()) {
-                            playerRepository.save(new Player(userId, signUpDTO.getName(), new Date(postedEventDTO.getStartTime())));
+                            playerRepository.save(new Player(userId, signUpDTO.getName(), new Date(postedEventDTO.getStartTime() * 1000L)));
                         }
                     });
                 }
